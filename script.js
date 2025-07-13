@@ -1,4 +1,4 @@
-// === DOM Elements ===
+// dom elements
 const passwordInput = document.getElementById("password");
 const strengthBar = document.getElementById("strengthBar");
 const strengthText = document.getElementById("strengthText");
@@ -12,7 +12,7 @@ const lengthRange = document.getElementById("lengthRange");
 const lengthValue = document.getElementById("lengthValue");
 const copyPassword = document.getElementById("copyPassword");
 
-// === Common Password Blacklist ===
+
 const blacklistedPasswords = [
   "password", "123456", "123456789", "qwerty", "abc123",
   "password1", "admin", "letmein", "welcome", "iloveyou",
@@ -20,17 +20,17 @@ const blacklistedPasswords = [
   "qwerty123", "baseball", "000000", "trustno1", "111111"
 ];
 
-// === Toggle password visibility ===
+
 showPassword.addEventListener("change", () => {
   passwordInput.type = showPassword.checked ? "text" : "password";
 });
 
-// === Update slider label ===
+// Update slider label 
 lengthRange.addEventListener("input", () => {
   lengthValue.textContent = lengthRange.value;
 });
 
-// === On input: live strength checking ===
+// On input: live strength checking 
 passwordInput.addEventListener("input", () => {
   const password = passwordInput.value;
 
@@ -59,7 +59,7 @@ passwordInput.addEventListener("input", () => {
   message.textContent = "";
 });
 
-// === On form submission ===
+// On form submission
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const password = passwordInput.value;
@@ -78,7 +78,7 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-// === Generate strong password ===
+//  Generate strong password 
 generateBtn.addEventListener("click", () => {
   let generated;
   let score = 0;
@@ -100,7 +100,7 @@ generateBtn.addEventListener("click", () => {
   message.style.color = "#00e676";
 });
 
-// === Copy to clipboard ===
+// Copy to clipboard 
 copyPassword.addEventListener("click", () => {
   const password = passwordInput.value;
   if (password) {
@@ -111,7 +111,7 @@ copyPassword.addEventListener("click", () => {
   }
 });
 
-// === Strength bar UI ===
+//  Strength bar UI 
 function updateStrengthBar(score) {
   const colors = ["#ff4d4d", "#ff944d", "#f0e130", "#9acd32", "#00e676"];
   const width = ((score + 1) / 5) * 100;
@@ -120,7 +120,7 @@ function updateStrengthBar(score) {
   strengthBar.style.backgroundColor = colors[score] || "#ff4d4d";
 }
 
-// === Show suggestions ===
+//  Show suggestions 
 function showSuggestions(tips) {
   if (tips.length > 0) {
     suggestionsBox.textContent = `💡 Tips: ${tips.join(", ")}`;
@@ -129,7 +129,7 @@ function showSuggestions(tips) {
   }
 }
 
-// === Checklist validator ===
+//  Checklist validator 
 function updateChecklist(password) {
   const checks = {
     length: password.length >= 8,
@@ -153,7 +153,7 @@ function updateChecklist(password) {
   }
 }
 
-// === Reset UI ===
+//  Reset UI 
 function resetUI() {
   strengthBar.style.width = "0%";
   strengthBar.style.backgroundColor = "#ff4d4d";
@@ -171,12 +171,12 @@ function resetUI() {
   });
 }
 
-// === Check if password is blacklisted ===
+//  Check if password is blacklisted 
 function isBlacklisted(password) {
   return blacklistedPasswords.includes(password.toLowerCase());
 }
 
-// === Password Generator ===
+//  Password Generator 
 function generatePassword(length = 16) {
   const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+";
   let password = "";

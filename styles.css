@@ -1,4 +1,4 @@
-/* === Base Reset === */
+/*beginning of my styles*/
 * {
   box-sizing: border-box;
 }
@@ -15,14 +15,14 @@ body {
   min-height: 100vh;
 }
 
-/* === Container === */
+
 .container {
   width: 90%;
   max-width: 420px;
   padding: 20px;
 }
 
-/* === Auth Form (Leather Look) === */
+
 .auth-form {
   background: linear-gradient(145deg, #5b3a29, #3e2a1d);
   padding: 30px 25px;
@@ -33,7 +33,7 @@ body {
   overflow: hidden;
 }
 
-/* Leather texture overlay */
+
 .auth-form::before {
   content: "";
   position: absolute;
@@ -47,7 +47,7 @@ body {
   pointer-events: none;
 }
 
-/* Faux stitching border */
+
 .auth-form::after {
   content: "";
   position: absolute;
@@ -70,7 +70,7 @@ body {
   z-index: 2;
 }
 
-/* === Input Fields === */
+
 .input-box {
   position: relative;
   margin-bottom: 22px;
@@ -108,7 +108,7 @@ body {
   opacity: 0.7;
 }
 
-/* === Checklist === */
+
 #checklist {
   list-style: none;
   padding: 0;
@@ -142,7 +142,7 @@ body {
   color: #00e676;
 }
 
-/* === Strength Meter === */
+
 #strengthMeter {
   height: 6px;
   background: rgba(255, 255, 255, 0.1);
@@ -168,7 +168,7 @@ body {
   text-align: center;
 }
 
-/* === Suggestions === */
+
 #suggestions {
   font-size: 13px;
   color: #ffcc80;
@@ -177,7 +177,7 @@ body {
   min-height: 18px;
 }
 
-/* === Generator === */
+
 .generator-container {
   margin-bottom: 15px;
   text-align: center;
@@ -200,7 +200,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* === Checkbox === */
+
 .checkbox-container {
   display: flex;
   align-items: center;
@@ -216,7 +216,7 @@ body {
   accent-color: #a67c52;
 }
 
-/* === Button === */
+
 .btn {
   width: 100%;
   padding: 12px;
@@ -238,7 +238,7 @@ body {
   box-shadow: 0 0 15px rgba(166, 124, 82, 0.6);
 }
 
-/* === Secondary Button === */
+
 .secondary-btn {
   background: linear-gradient(to bottom, #a05279, #7b3b6f);
   color: #fff;
@@ -251,7 +251,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* === Message === */
+
 #message {
   text-align: center;
   margin-top: 14px;
@@ -259,9 +259,10 @@ body {
   font-size: 14px;
   min-height: 22px;
   color: #a67c52;
-}
 
-/* === Responsive Tweak === */
+  }
+
+
 @media (max-width: 480px) {
   .auth-form {
     padding: 25px 20px;
@@ -271,3 +272,4 @@ body {
     font-size: 15px;
   }
 }
+
