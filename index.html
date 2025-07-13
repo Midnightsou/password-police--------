@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Police</title>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- Zxcvbn Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js" defer></script>
+
+  <!-- Custom CSS and JS -->
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <form id="passwordpolice" class="auth-form" novalidate>
+      <h2>Password Police</h2>
+
+      <!-- Password Input -->
+      <div class="input-box">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+          minlength="5"
+          aria-describedby="strengthText"
+        />
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <!-- Password Checklist -->
+      <ul id="checklist">
+        <li id="length" class="invalid">📏 At least 8 characters</li>
+        <li id="lowercase" class="invalid">🔡 Lowercase letter</li>
+        <li id="uppercase" class="invalid">🔠 Uppercase letter</li>
+        <li id="number" class="invalid">🔢 Number</li>
+        <li id="symbol" class="invalid">💥 Symbol</li>
+      </ul>
+
+      <!-- Strength Meter -->
+      <div id="strengthMeter" aria-hidden="true">
+        <div id="strengthBar"></div>
+      </div>
+      <span id="strengthText" aria-live="polite"></span>
+
+      <!-- Suggestions -->
+      <div id="suggestions" aria-live="polite"></div>
+
+      <!-- Password Generator Button -->
+      <div class="generator-container">
+  <label for="lengthRange">
+    Password Length: <span id="lengthValue">16</span>
+  </label>
+  <input type="range" id="lengthRange" min="10" max="32" value="16" />
+  <button type="button" id="generatePassword" class="btn secondary-btn">
+    🔄 Generate Password
+  </button>
+  
+  <button type="button" id="copyPassword" class="btn secondary-btn">
+    📋 Copy to Clipboard
+  </button>
+</div>
+
+
+
+      <!-- Show Password -->
+      <div class="checkbox-container">
+        <input type="checkbox" id="showPassword" />
+        <label for="showPassword">Show Password</label>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn">Check Password</button>
+
+      <!-- Message -->
+      <div id="message" aria-live="polite"></div>
+    </form>
+  </div>
+</body>
+</html>
